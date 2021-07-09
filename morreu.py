@@ -3,6 +3,9 @@ import discord
 from discord.ext import commands
 import json
 import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 PATH_TO_SAVE_FILE = "deaths.json"
 INITIAL_JSON = '{"deaths": [], "lastUpdate": {"id": 1, "name": "John Doe", "game": "Life Game", "dateTime": "1970-01-01T00:00:00.000000"}}'
@@ -186,4 +189,4 @@ async def mortes(ctx, user:discord.Member = {}, *args):
 #        f.close()
 #        await message.channel.send('Hello!')
 
-client.run("ODYyNzgyMDY5NzY3MDEyMzUy.YOdWaw.a5tnzg_tplTk1MAz1Rb0VmuDKNc")
+client.run(os.getenv('TOKEN'))
